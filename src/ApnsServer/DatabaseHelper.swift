@@ -8,7 +8,7 @@
 
 import PerfectLib
 
-class DatabaseHelper: NSObject {
+class DatabaseHelper: AnyObject {
     
     
     static func createDBWithName(databaseName: String){
