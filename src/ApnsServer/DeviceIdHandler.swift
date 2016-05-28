@@ -8,7 +8,7 @@
 
 import PerfectLib
 
-class DeviceIdHandler: RequestHandler {
+class DeviceIdHandlerolD: RequestHandler {
     
     func handleRequest(request: WebRequest, response: WebResponse) {
         
