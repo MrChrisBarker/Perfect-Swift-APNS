@@ -17,7 +17,7 @@ public func PerfectServerModuleInit(){
     Routing.Routes["GET", ["/logdevice", "logdevice"] ] = { (_:WebResponse) in return DeviceIdHandler() }
     Routing.Routes["GET", ["/listtokens", "listtokens"] ] = { (_:WebResponse) in return TokenHandler() }
     
-    DatabaseHelper.createDBWithName(DATABASE_NAME)
+    TokenHandler.createDBWithName(DATABASE_NAME)
     
 }
 
@@ -47,7 +47,7 @@ class TokenHandler: RequestHandler{
 
     func handleRequest(request: WebRequest, response: WebResponse) {
      
-        if let deviceTokens: Array<String> = DatabaseHelper.getDeviceTokenListFromDbWithName(DATABASE_NAME) {
+        if let deviceTokens: Array<String> = getDeviceTokenListFromDbWithName(DATABASE_NAME) {
             
             print("DEVICE TOKEN LIST: \(deviceTokens)")
             print("")
@@ -57,6 +57,45 @@ class TokenHandler: RequestHandler{
         
         response.requestCompletedCallback()
         
+    }
+    
+    func getDeviceTokenListFromDbWithName(databaseName: String) ->Array<String>{
+        
+        var deviceTokenList = Array<String>()
+        
+        do{
+            let sqlite = try SQLite(TokenHandler.databaseLocation())
+            
+            try sqlite.forEachRow("SELECT deviceToken, time FROM \(databaseName) ORDER BY time DESC") {
+                (stmt:SQLiteStmt, i:Int) -> () in
+                
+                let name: String = stmt.columnText(0)
+                deviceTokenList.append(name)
+                
+            }
+        }
+        catch{
+            print("")
+        }
+        
+        return deviceTokenList
+        
+    }
+    
+    static func createDBWithName(databaseName: String){
+        
+        do {
+            let sqlite = try SQLite(databaseLocation())
+            try sqlite.execute("CREATE TABLE IF NOT EXISTS \(databaseName) (id INTEGER PRIMARY KEY, deviceToken TEXT, time REAL)")
+        }
+        catch {
+            print("Error creating Database with name \(databaseName)")
+        }
+        
+    }
+    
+    static func databaseLocation() -> String{
+        return PerfectServer.staticPerfectServer.homeDir() + serverSQLiteDBs + "APNSDeviceList"
     }
     
 }

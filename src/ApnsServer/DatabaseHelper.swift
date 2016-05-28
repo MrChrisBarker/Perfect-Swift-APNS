@@ -8,7 +8,7 @@
 
 import PerfectLib
 
-class DatabaseHelper: AnyObject {
+class DatabaseHelperOld: AnyObject {
     
     
     static func createDBWithName(databaseName: String){
@@ -30,7 +30,7 @@ class DatabaseHelper: AnyObject {
     static func addDeviceTokenDb(deviceToken: String, intoDb databaseName: String){
         
         do{
-            let sqlite = try SQLite(DatabaseHelper.databaseLocation())
+            let sqlite = try SQLite(databaseLocation())
             try sqlite.execute("INSERT INTO \(databaseName) (deviceToken, time) VALUES (?,?)", doBindings: {
                 (stmt:SQLiteStmt) -> () in
                 
