@@ -8,8 +8,6 @@
 
 import PerfectLib
 
-let DATABASE_NAME = "DbDeviceTokens"
-
 class DeviceIdHandler: RequestHandler {
     
     func handleRequest(request: WebRequest, response: WebResponse) {
@@ -18,7 +16,7 @@ class DeviceIdHandler: RequestHandler {
             
             let token = deviceToken[0]
             
-            addDeviceTokenDb(token, intoDb: DATABASE_NAME)
+            addDeviceTokenDb(token, intoDb: "DbDeviceTokens")
             
         }
         response.requestCompletedCallback()

@@ -9,15 +9,17 @@
 import PerfectLib
 //import APNS
 
+
+
 public func PerfectServerModuleInit(){
-    
+
     Routing.Handler.registerGlobally()
     
     Routing.Routes["GET", ["/push", "push"] ] = { (_:WebResponse) in return IndexHandler() }
     Routing.Routes["GET", ["/logdevice", "logdevice"] ] = { (_:WebResponse) in return DeviceIdHandler() }
     Routing.Routes["GET", ["/listtokens", "listtokens"] ] = { (_:WebResponse) in return TokenHandler() }
     
-    TokenHandler.createDBWithName(DATABASE_NAME)
+    TokenHandler.createDBWithName("DbDeviceTokens")
     
 }
 
@@ -47,7 +49,7 @@ class TokenHandler: RequestHandler{
 
     func handleRequest(request: WebRequest, response: WebResponse) {
      
-        if let deviceTokens: Array<String> = getDeviceTokenListFromDbWithName(DATABASE_NAME) {
+        if let deviceTokens: Array<String> = getDeviceTokenListFromDbWithName("DbDeviceTokens") {
             
             print("DEVICE TOKEN LIST: \(deviceTokens)")
             print("")
