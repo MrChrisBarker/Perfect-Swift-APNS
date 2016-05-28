@@ -23,8 +23,8 @@ modulecache:
 
 $(TARGET): modulecache
 	$(SWIFTC) $(SWIFTC_FLAGS) "ApnsServer/DatabaseHelper.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
-	$(SWIFTC) $(SWIFTC_FLAGS) "ApnsServer/IndexHandler.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
 	$(SWIFTC) $(SWIFTC_FLAGS) "ApnsServer/DeviceIdHandler.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule
+	$(SWIFTC) $(SWIFTC_FLAGS) "ApnsServer/IndexHandler.swift" -o $@.o -module-name $@ -emit-module-path $@.swiftmodule	
 	clang++ $(LFLAGS) $@.o -o $@.so
 
 clean:
