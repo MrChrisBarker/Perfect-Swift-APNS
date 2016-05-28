@@ -7,36 +7,57 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8300CF731CFA55E200C800B3 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300CF681CFA55B200C800B3 /* PerfectLib.framework */; };
 		8394DC131CED1C89008A75BE /* ApnsServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8394DC121CED1C89008A75BE /* ApnsServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8394DC1D1CED1D6F008A75BE /* index.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 8394DC1C1CED1D6F008A75BE /* index.mustache */; };
 		8394DC1F1CED1D8A008A75BE /* IndexHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DC1E1CED1D8A008A75BE /* IndexHandler.swift */; };
 		8394DC211CED2146008A75BE /* index.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8394DC1C1CED1D6F008A75BE /* index.mustache */; };
-		8394DC231CF266E2008A75BE /* APNS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8394DC221CF266E2008A75BE /* APNS.framework */; };
 		8394DC251CF3B5A2008A75BE /* DeviceIdHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DC241CF3B5A2008A75BE /* DeviceIdHandler.swift */; };
 		8394DC281CF3B7E7008A75BE /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DC271CF3B7E7008A75BE /* DatabaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8300CF101CFA513200C800B3 /* PBXContainerItemProxy */ = {
+		8300CF631CFA55B200C800B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */;
+			containerPortal = 8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3FBBC7E71C5CC20F00EF69CC;
-			remoteInfo = APNS;
+			remoteGlobalIDString = F8F289BE1BD53CF000367249;
+			remoteInfo = PerfectLibOSX;
 		};
-		8300CF121CFA513200C800B3 /* PBXContainerItemProxy */ = {
+		8300CF651CFA55B200C800B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */;
+			containerPortal = 8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3F388E0F1C5E1DC20000EDCE;
-			remoteInfo = UnitTest;
+			remoteGlobalIDString = F8F289C81BD53CF000367249;
+			remoteInfo = PerfectLibOSXTests;
 		};
-		8300CF561CFA54C200C800B3 /* PBXContainerItemProxy */ = {
+		8300CF671CFA55B200C800B3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3FBBC7E61C5CC20F00EF69CC;
-			remoteInfo = APNS;
+			containerPortal = 8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8F28A381BD5633100367249;
+			remoteInfo = PerfectLibiOS;
+		};
+		8300CF6C1CFA55B200C800B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F842421B1BD966FC001EFF66;
+			remoteInfo = "PerfectServer FastCGI";
+		};
+		8300CF6E1CFA55B200C800B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8E752DF1BDA8A7600BFC36A;
+			remoteInfo = "PerfectServer HTTP";
+		};
+		8300CF701CFA55B200C800B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F88B06811BDD48DD001FD0CD;
+			remoteInfo = "PerfectServer HTTP App";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -54,14 +75,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = APNS.xcodeproj; path = "../../../Desktop/swift-apns-master/Framework/APNS.xcodeproj"; sourceTree = "<group>"; };
+		8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PerfectLib.xcodeproj; path = "../../../Desktop/Perfect-1.0.0 2/PerfectLib/PerfectLib.xcodeproj"; sourceTree = "<group>"; };
+		8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PerfectServer.xcodeproj; path = "../../../Desktop/Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj"; sourceTree = "<group>"; };
 		8394DC0F1CED1C89008A75BE /* ApnsServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApnsServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8394DC121CED1C89008A75BE /* ApnsServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApnsServer.h; sourceTree = "<group>"; };
 		8394DC141CED1C89008A75BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8394DC1A1CED1CA7008A75BE /* PerfectLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectLib.framework; path = ../../../SourceControl/Build/Build/Products/Debug/PerfectLib.framework; sourceTree = "<group>"; };
 		8394DC1C1CED1D6F008A75BE /* index.mustache */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.mustache; sourceTree = "<group>"; };
 		8394DC1E1CED1D8A008A75BE /* IndexHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexHandler.swift; sourceTree = "<group>"; };
-		8394DC221CF266E2008A75BE /* APNS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APNS.framework; path = "../../../Desktop/swift-apns-master/Framework/build/Debug/APNS.framework"; sourceTree = "<group>"; };
 		8394DC241CF3B5A2008A75BE /* DeviceIdHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceIdHandler.swift; sourceTree = "<group>"; };
 		8394DC271CF3B7E7008A75BE /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,18 +91,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8394DC231CF266E2008A75BE /* APNS.framework in Frameworks */,
+				8300CF731CFA55E200C800B3 /* PerfectLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8300CF0C1CFA513200C800B3 /* Products */ = {
+		8300CF5B1CFA55B200C800B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8300CF111CFA513200C800B3 /* APNS.framework */,
-				8300CF131CFA513200C800B3 /* UnitTest.xctest */,
+				8300CF641CFA55B200C800B3 /* PerfectLib.framework */,
+				8300CF661CFA55B200C800B3 /* PerfectLibOSXTests.xctest */,
+				8300CF681CFA55B200C800B3 /* PerfectLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8300CF5E1CFA55B200C800B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8300CF6D1CFA55B200C800B3 /* perfectserverfcgi */,
+				8300CF6F1CFA55B200C800B3 /* perfectserverhttp */,
+				8300CF711CFA55B200C800B3 /* PerfectServer HTTP.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,9 +121,8 @@
 		8394DC051CED1C89008A75BE = {
 			isa = PBXGroup;
 			children = (
-				8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */,
-				8394DC221CF266E2008A75BE /* APNS.framework */,
-				8394DC1A1CED1CA7008A75BE /* PerfectLib.framework */,
+				8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */,
+				8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */,
 				8394DC111CED1C89008A75BE /* ApnsServer */,
 				8394DC101CED1C89008A75BE /* Products */,
 			);
@@ -154,7 +184,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				8300CF571CFA54C200C800B3 /* PBXTargetDependency */,
 			);
 			name = ApnsServer;
 			productName = ApnsServer;
@@ -187,8 +216,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 8300CF0C1CFA513200C800B3 /* Products */;
-					ProjectRef = 8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */;
+					ProductGroup = 8300CF5B1CFA55B200C800B3 /* Products */;
+					ProjectRef = 8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */;
+				},
+				{
+					ProductGroup = 8300CF5E1CFA55B200C800B3 /* Products */;
+					ProjectRef = 8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -199,18 +232,46 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		8300CF111CFA513200C800B3 /* APNS.framework */ = {
+		8300CF641CFA55B200C800B3 /* PerfectLib.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = APNS.framework;
-			remoteRef = 8300CF101CFA513200C800B3 /* PBXContainerItemProxy */;
+			path = PerfectLib.framework;
+			remoteRef = 8300CF631CFA55B200C800B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		8300CF131CFA513200C800B3 /* UnitTest.xctest */ = {
+		8300CF661CFA55B200C800B3 /* PerfectLibOSXTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = UnitTest.xctest;
-			remoteRef = 8300CF121CFA513200C800B3 /* PBXContainerItemProxy */;
+			path = PerfectLibOSXTests.xctest;
+			remoteRef = 8300CF651CFA55B200C800B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8300CF681CFA55B200C800B3 /* PerfectLib.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PerfectLib.framework;
+			remoteRef = 8300CF671CFA55B200C800B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8300CF6D1CFA55B200C800B3 /* perfectserverfcgi */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = perfectserverfcgi;
+			remoteRef = 8300CF6C1CFA55B200C800B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8300CF6F1CFA55B200C800B3 /* perfectserverhttp */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = perfectserverhttp;
+			remoteRef = 8300CF6E1CFA55B200C800B3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8300CF711CFA55B200C800B3 /* PerfectServer HTTP.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "PerfectServer HTTP.app";
+			remoteRef = 8300CF701CFA55B200C800B3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -238,14 +299,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		8300CF571CFA54C200C800B3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = APNS;
-			targetProxy = 8300CF561CFA54C200C800B3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8394DC151CED1C89008A75BE /* Debug */ = {

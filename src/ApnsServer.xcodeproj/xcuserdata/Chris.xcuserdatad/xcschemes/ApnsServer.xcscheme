@@ -49,7 +49,7 @@
             BlueprintIdentifier = "F88B06801BDD48DD001FD0CD"
             BuildableName = "PerfectServer HTTP.app"
             BlueprintName = "PerfectServer HTTP App"
-            ReferencedContainer = "container:../Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj">
+            ReferencedContainer = "container:../../../Desktop/Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -72,7 +72,7 @@
             BlueprintIdentifier = "F88B06801BDD48DD001FD0CD"
             BuildableName = "PerfectServer HTTP.app"
             BlueprintName = "PerfectServer HTTP App"
-            ReferencedContainer = "container:../Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj">
+            ReferencedContainer = "container:../../../Desktop/Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
