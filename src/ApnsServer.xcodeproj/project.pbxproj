@@ -31,6 +31,13 @@
 			remoteGlobalIDString = 3F388E0F1C5E1DC20000EDCE;
 			remoteInfo = UnitTest;
 		};
+		8300CF561CFA54C200C800B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8300CF0B1CFA513200C800B3 /* APNS.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 3FBBC7E61C5CC20F00EF69CC;
+			remoteInfo = APNS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -147,6 +154,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				8300CF571CFA54C200C800B3 /* PBXTargetDependency */,
 			);
 			name = ApnsServer;
 			productName = ApnsServer;
@@ -230,6 +238,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8300CF571CFA54C200C800B3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = APNS;
+			targetProxy = 8300CF561CFA54C200C800B3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8394DC151CED1C89008A75BE /* Debug */ = {
