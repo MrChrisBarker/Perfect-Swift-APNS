@@ -6,7 +6,6 @@
 //  Copyright © 2016 MrChrisBarker. All rights reserved.
 //
 
-import Foundation
 import PerfectLib
 
 let DATABASE_NAME = "DbDeviceTokens"
