@@ -16,7 +16,7 @@ all: $(TARGET)
 
 install:
 	mv $(TARGET).so ../PerfectLibraries
-	cp index.mustache ../webroot
+	cp ApnsServer/index.mustache ../webroot
 
 modulecache:
 	@mkdir -p $(MODULE_CACHE_PATH)
