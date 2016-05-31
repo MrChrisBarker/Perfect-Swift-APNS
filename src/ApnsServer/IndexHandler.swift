@@ -27,18 +27,23 @@ class IndexHandler: RequestHandler{
    
     func handleRequest(request: WebRequest, response: WebResponse) {
         
-//        let aps = ["sound":"default", "alert":"testPush()"]
-//        let payload = ["aps":aps]
-//        try! APNSNetwork().sendPush("com.myapp.bundle",
-//                                    priority: 10,
-//                                    payload: payload,
-//                                    deviceToken: "3dd55a59056441ab275b8b679458388cae76be3a9a02a00234388e50fe91f2fe",
-//                                    certificatePath: NSBundle.mainBundle().pathForResource("push", ofType: "p12")!,
-//                                    passphrase: "",
-//                                    sandbox: true) { (response) -> Void in
-//                                        
-//        }
         
+        var notificationItems: [IOSNotificationItem] = [IOSNotificationItem]()
+        notificationItems.append(IOSNotificationItem.Badge(1))
+        notificationItems.append(IOSNotificationItem.AlertTitle("Welcome to the Dance!"))
+        
+        
+        NotificationPusher.development = true
+        NotificationPusher.addConfigurationIOS("perfect.test.apns") { (net) in
+            net.useCertificateChainFile("") // cer
+            net.useCertificateFile("") // pem
+            net.keyFilePassword = "789789"
+        }
+            
+        let notif: NotificationPusher = NotificationPusher(apnsTopic: "com.calicoware.APNS-Test-application")
+        notif.pushIOS("perfect.test.apns", deviceToken: "", expiration: 0, priority: 1, notificationItems: notificationItems) { (response: NotificationResponse) in
+            print("RESPONSE: \(response.stringBody) \(response.jsonObjectBody)")
+        }
         
         response.requestCompletedCallback()
     }
