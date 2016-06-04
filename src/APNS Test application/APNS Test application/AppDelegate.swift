@@ -57,8 +57,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let trimmedToken: String = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "")
         
-        
-            
             let url = NSURL(string: "https://dry-hollows-45570.herokuapp.com/logdevice?deviceToken=\(trimmedToken)")
             
             let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {

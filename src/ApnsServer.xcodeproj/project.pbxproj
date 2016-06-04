@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8300CF731CFA55E200C800B3 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300CF681CFA55B200C800B3 /* PerfectLib.framework */; };
-		8300CFC71CFE462C00C800B3 /* APNS.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8300CFC61CFE462C00C800B3 /* APNS.cer */; };
 		8300CFC91CFE463000C800B3 /* Certificates.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8300CFC81CFE463000C800B3 /* Certificates.pem */; };
-		835627EF1CFF98F90045CFD3 /* PushChatCert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 835627EE1CFF98F90045CFD3 /* PushChatCert.pem */; };
 		835627F41CFF9E700045CFD3 /* ck.pem in Resources */ = {isa = PBXBuildFile; fileRef = 835627F31CFF9E700045CFD3 /* ck.pem */; };
 		8394DC131CED1C89008A75BE /* ApnsServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8394DC121CED1C89008A75BE /* ApnsServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8394DC1D1CED1D6F008A75BE /* index.mustache in Resources */ = {isa = PBXBuildFile; fileRef = 8394DC1C1CED1D6F008A75BE /* index.mustache */; };
@@ -92,11 +90,8 @@
 /* Begin PBXFileReference section */
 		8300CF5A1CFA55B200C800B3 /* PerfectLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PerfectLib.xcodeproj; path = "../../../Desktop/Perfect-1.0.0 2/PerfectLib/PerfectLib.xcodeproj"; sourceTree = "<group>"; };
 		8300CF5D1CFA55B200C800B3 /* PerfectServer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PerfectServer.xcodeproj; path = "../../../Desktop/Perfect-1.0.0 2/PerfectServer/PerfectServer.xcodeproj"; sourceTree = "<group>"; };
-		8300CF741CFA68C100C800B3 /* newspush.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = newspush.php; sourceTree = "<group>"; };
 		8300CFB21CFC576B00C800B3 /* APNS Test application.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "APNS Test application.xcodeproj"; path = "APNS Test application/APNS Test application.xcodeproj"; sourceTree = "<group>"; };
-		8300CFC61CFE462C00C800B3 /* APNS.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = APNS.cer; sourceTree = "<group>"; };
 		8300CFC81CFE463000C800B3 /* Certificates.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Certificates.pem; sourceTree = "<group>"; };
-		835627EE1CFF98F90045CFD3 /* PushChatCert.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PushChatCert.pem; sourceTree = "<group>"; };
 		835627F31CFF9E700045CFD3 /* ck.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ck.pem; sourceTree = "<group>"; };
 		8394DC0F1CED1C89008A75BE /* ApnsServer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApnsServer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8394DC121CED1C89008A75BE /* ApnsServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApnsServer.h; sourceTree = "<group>"; };
@@ -152,8 +147,6 @@
 			children = (
 				8300CFC81CFE463000C800B3 /* Certificates.pem */,
 				835627F31CFF9E700045CFD3 /* ck.pem */,
-				835627EE1CFF98F90045CFD3 /* PushChatCert.pem */,
-				8300CFC61CFE462C00C800B3 /* APNS.cer */,
 			);
 			name = Certs;
 			sourceTree = "<group>";
@@ -185,7 +178,6 @@
 				8394DC121CED1C89008A75BE /* ApnsServer.h */,
 				8394DC141CED1C89008A75BE /* Info.plist */,
 				8394DC1C1CED1D6F008A75BE /* index.mustache */,
-				8300CF741CFA68C100C800B3 /* newspush.php */,
 				8394DC1E1CED1D8A008A75BE /* IndexHandler.swift */,
 			);
 			path = ApnsServer;
@@ -335,10 +327,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				835627EF1CFF98F90045CFD3 /* PushChatCert.pem in Resources */,
 				8394DC1D1CED1D6F008A75BE /* index.mustache in Resources */,
 				835627F41CFF9E700045CFD3 /* ck.pem in Resources */,
-				8300CFC71CFE462C00C800B3 /* APNS.cer in Resources */,
 				8300CFC91CFE463000C800B3 /* Certificates.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
