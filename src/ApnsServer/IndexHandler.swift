@@ -38,11 +38,11 @@ class IndexHandler: RequestHandler{
                 
                 net.keyFilePassword = "789789"
                 
-                let certPath = NSString(string:"~/Certificates.pem").stringByExpandingTildeInPath
-                let privatePath = NSString(string:"~/ck.pem").stringByExpandingTildeInPath
+                //let certPath = NSString(string:"~/Certificates.pem").stringByExpandingTildeInPath
+                //let privatePath = NSString(string:"~/ck.pem").stringByExpandingTildeInPath
                 
-                guard net.useCertificateFile(certPath) &&
-                    net.usePrivateKeyFile(privatePath) &&
+                guard net.useCertificateFile("~/Certificates.pem") &&
+                    net.usePrivateKeyFile("~/ck.pem") &&
                     net.checkPrivateKey()
                     else {
                         
