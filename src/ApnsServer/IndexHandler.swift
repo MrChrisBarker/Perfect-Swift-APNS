@@ -101,7 +101,7 @@ class TokenHandler: RequestHandler{
         do{
             let sqlite = try SQLite(TokenHandler.databaseLocation())
             
-            try sqlite.forEachRow("SELECT DISTINCT deviceToken, time FROM \(databaseName) ORDER BY time DESC") {
+            try sqlite.forEachRow("SELECT DISTINCT deviceToken FROM \(databaseName) ORDER BY time DESC") {
                 (stmt:SQLiteStmt, i:Int) -> () in
                 
                 let name: String = stmt.columnText(0)
