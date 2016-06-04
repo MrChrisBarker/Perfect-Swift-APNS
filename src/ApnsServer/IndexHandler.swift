@@ -36,8 +36,8 @@ class IndexHandler: RequestHandler{
                 
                 net.keyFilePassword = "789789"
                 
-                let certPath = "\(NSHomeDirectory())/Certificates.pem"
-                let privatePath = "\(NSHomeDirectory())/ck.pem"
+                let certPath = "./webroot/Certificates.pem"
+                let privatePath = "./webroot/ck.pem"
                 
                 guard net.useCertificateFile(certPath) &&
                     net.usePrivateKeyFile(privatePath) &&

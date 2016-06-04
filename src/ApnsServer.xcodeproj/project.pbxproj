@@ -18,6 +18,8 @@
 		8394DC211CED2146008A75BE /* index.mustache in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8394DC1C1CED1D6F008A75BE /* index.mustache */; };
 		8394DC251CF3B5A2008A75BE /* DeviceIdHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DC241CF3B5A2008A75BE /* DeviceIdHandler.swift */; };
 		8394DC281CF3B7E7008A75BE /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8394DC271CF3B7E7008A75BE /* DatabaseHelper.swift */; };
+		83CB26C21D03937F007D9E2B /* Certificates.pem in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8300CFC81CFE463000C800B3 /* Certificates.pem */; };
+		83CB26C31D039381007D9E2B /* ck.pem in CopyFiles */ = {isa = PBXBuildFile; fileRef = 835627F31CFF9E700045CFD3 /* ck.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 			dstSubfolderSpec = 16;
 			files = (
 				8394DC211CED2146008A75BE /* index.mustache in CopyFiles */,
+				83CB26C31D039381007D9E2B /* ck.pem in CopyFiles */,
+				83CB26C21D03937F007D9E2B /* Certificates.pem in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
