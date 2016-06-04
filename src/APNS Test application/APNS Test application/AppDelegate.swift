@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if !NSUserDefaults.standardUserDefaults().boolForKey("push.token.logged") {
             
-            let url = NSURL(string: "http://0.0.0.0:8181/logdevice?deviceToken=\(trimmedToken)")
+            let url = NSURL(string: "https://dry-hollows-45570.herokuapp.com/logdevice?deviceToken=\(trimmedToken)")
             
             let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {
                 (data, response, error) in

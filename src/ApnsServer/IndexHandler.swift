@@ -27,24 +27,54 @@ class IndexHandler: RequestHandler{
    
     func handleRequest(request: WebRequest, response: WebResponse) {
         
-        
-        var notificationItems: [IOSNotificationItem] = [IOSNotificationItem]()
-        notificationItems.append(IOSNotificationItem.Badge(1))
-        notificationItems.append(IOSNotificationItem.AlertTitle("Welcome to the Dance!"))
+        let configurationName = "com.calicoware.APNS-Test-application"
         
         
-        NotificationPusher.development = true
-        NotificationPusher.addConfigurationIOS("perfect.test.apns") { (net) in
-            net.useCertificateChainFile("") // cer
-            net.useCertificateFile("") // pem
-            net.keyFilePassword = "789789"
-        }
+        
+        if let message: String = request.param("message") {
             
-        let notif: NotificationPusher = NotificationPusher(apnsTopic: "com.calicoware.APNS-Test-application")
-        notif.pushIOS("perfect.test.apns", deviceToken: "", expiration: 0, priority: 1, notificationItems: notificationItems) { (response: NotificationResponse) in
-            print("RESPONSE: \(response.stringBody) \(response.jsonObjectBody)")
+            NotificationPusher.addConfigurationIOS(configurationName) {
+                (net:NetTCPSSL) in
+                
+                net.keyFilePassword = "789789"
+                
+                let certPath = NSString(string:"~/Certificates.pem").stringByExpandingTildeInPath
+                let privatePath = NSString(string:"~/ck.pem").stringByExpandingTildeInPath
+                
+                guard net.useCertificateFile(certPath) &&
+                    net.usePrivateKeyFile(privatePath) &&
+                    net.checkPrivateKey()
+                    else {
+                        
+                        let code = Int32(net.errorCode())
+                        print("Error validating private key file: \(net.errorStr(code))")
+                        return
+                }
+            }
+            
+            NotificationPusher.development = true // set to toggle to the APNS sandbox server
+            
+            let deviceTokens: Array<String> = TokenHandler().getDeviceTokenListFromDbWithName("DbDeviceTokens")
+            
+            for deviceToken: String in deviceTokens {
+                
+                let deviceId = deviceToken
+                let ary = [IOSNotificationItem.AlertBody(message), IOSNotificationItem.Sound("default")]
+                let n = NotificationPusher()
+                
+                n.apnsTopic = "com.calicoware.APNS-Test-application"
+                
+                n.pushIOS(configurationName, deviceToken: deviceId, expiration: 0, priority: 10, notificationItems: ary) {
+                    response in
+                    
+                    print("NotificationResponse: \(response.code) \(response.body)")
+                }
+                
+            }
+            
         }
-        
+    
+
         response.requestCompletedCallback()
     }
     
