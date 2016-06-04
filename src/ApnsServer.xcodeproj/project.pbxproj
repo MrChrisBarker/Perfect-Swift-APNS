@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8300CF731CFA55E200C800B3 /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8300CF681CFA55B200C800B3 /* PerfectLib.framework */; };
-		8300CF751CFA68C100C800B3 /* newspush.php in Resources */ = {isa = PBXBuildFile; fileRef = 8300CF741CFA68C100C800B3 /* newspush.php */; };
 		8300CFC71CFE462C00C800B3 /* APNS.cer in Resources */ = {isa = PBXBuildFile; fileRef = 8300CFC61CFE462C00C800B3 /* APNS.cer */; };
 		8300CFC91CFE463000C800B3 /* Certificates.pem in Resources */ = {isa = PBXBuildFile; fileRef = 8300CFC81CFE463000C800B3 /* Certificates.pem */; };
 		835627EF1CFF98F90045CFD3 /* PushChatCert.pem in Resources */ = {isa = PBXBuildFile; fileRef = 835627EE1CFF98F90045CFD3 /* PushChatCert.pem */; };
@@ -337,7 +336,6 @@
 				835627F41CFF9E700045CFD3 /* ck.pem in Resources */,
 				8300CFC71CFE462C00C800B3 /* APNS.cer in Resources */,
 				8300CFC91CFE463000C800B3 /* Certificates.pem in Resources */,
-				8300CF751CFA68C100C800B3 /* newspush.php in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

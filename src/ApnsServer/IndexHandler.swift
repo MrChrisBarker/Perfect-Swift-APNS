@@ -29,8 +29,6 @@ class IndexHandler: RequestHandler{
         
         let configurationName = "com.calicoware.APNS-Test-application"
         
-        
-        
         if let message: String = request.param("message") {
             
             NotificationPusher.addConfigurationIOS(configurationName) {
@@ -38,11 +36,11 @@ class IndexHandler: RequestHandler{
                 
                 net.keyFilePassword = "789789"
                 
-                //let certPath = NSString(string:"~/Certificates.pem").stringByExpandingTildeInPath
-                //let privatePath = NSString(string:"~/ck.pem").stringByExpandingTildeInPath
+                let certPath = "\(NSHomeDirectory())/Certificates.pem"
+                let privatePath = "\(NSHomeDirectory())/ck.pem"
                 
-                guard net.useCertificateFile("~/Certificates.pem") &&
-                    net.usePrivateKeyFile("~/ck.pem") &&
+                guard net.useCertificateFile(certPath) &&
+                    net.usePrivateKeyFile(privatePath) &&
                     net.checkPrivateKey()
                     else {
                         

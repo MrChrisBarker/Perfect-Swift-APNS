@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let trimmedToken: String = deviceToken.description.stringByReplacingOccurrencesOfString("<", withString: "").stringByReplacingOccurrencesOfString(">", withString: "").stringByReplacingOccurrencesOfString(" ", withString: "")
         
-        if !NSUserDefaults.standardUserDefaults().boolForKey("push.token.logged") {
+        
             
             let url = NSURL(string: "https://dry-hollows-45570.herokuapp.com/logdevice?deviceToken=\(trimmedToken)")
             
@@ -71,7 +71,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             task.resume()
             
-        }
+        
         
     }
 
