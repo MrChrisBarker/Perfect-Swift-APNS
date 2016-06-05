@@ -2,13 +2,11 @@
 //  IndexHandler.swift
 //  ApnsServer
 //
-//  Created by Chris Barker on 18/05/2016.
+//  Created by Chris Brian Barker on 18/05/2016.
 //  Copyright © 2016 MrChrisBarker. All rights reserved.
 //
 
 import PerfectLib
-//import APNS
-
 
 
 public func PerfectServerModuleInit(){
@@ -23,21 +21,25 @@ public func PerfectServerModuleInit(){
     
 }
 
+//Class used for performing the push notification
 class IndexHandler: RequestHandler{
    
     func handleRequest(request: WebRequest, response: WebResponse) {
         
-        let configurationName = "com.calicoware.APNS-Test-application"
         
-        if let message: String = request.param("message") {
+        let configurationName = "com.your.own.configuration.name"
+        
+        if let message = request.params("message") {
             
+            //this is called everytime "pushIOS function is called
             NotificationPusher.addConfigurationIOS(configurationName) {
                 (net:NetTCPSSL) in
                 
-                net.keyFilePassword = "789789"
+                net.keyFilePassword = "yourpassword"
                 
-                let certPath = "./webroot/Certificates.pem"
-                let privatePath = "./webroot/ck.pem"
+                //Your own Certificates - these are not real Certs in this repo
+                let certPath = "./webroot/Certificate.pem"
+                let privatePath = "./webroot/PrivateCertificate.pem"
                 
                 guard net.useCertificateFile(certPath) &&
                     net.usePrivateKeyFile(privatePath) &&
@@ -50,17 +52,19 @@ class IndexHandler: RequestHandler{
                 }
             }
             
-            NotificationPusher.development = true // set to toggle to the APNS sandbox server
+            NotificationPusher.development = true
             
             let deviceTokens: Array<String> = TokenHandler().getDeviceTokenListFromDbWithName("DbDeviceTokens")
+            
+            let pushMessage: String = message[0]
             
             for deviceToken: String in deviceTokens {
                 
                 let deviceId = deviceToken
-                let ary = [IOSNotificationItem.AlertBody(message), IOSNotificationItem.Sound("default")]
+                let ary = [IOSNotificationItem.AlertBody(pushMessage), IOSNotificationItem.Sound("default")]
                 let n = NotificationPusher()
                 
-                n.apnsTopic = "com.calicoware.APNS-Test-application"
+                n.apnsTopic = "com.your.own.configuration.name"
                 
                 n.pushIOS(configurationName, deviceToken: deviceId, expiration: 0, priority: 10, notificationItems: ary) {
                     response in
@@ -72,12 +76,12 @@ class IndexHandler: RequestHandler{
             
         }
     
-
         response.requestCompletedCallback()
     }
     
 }
 
+//Class used for obtaining the list of device tokens already stored
 class TokenHandler: RequestHandler{
 
     func handleRequest(request: WebRequest, response: WebResponse) {
@@ -135,6 +139,7 @@ class TokenHandler: RequestHandler{
     
 }
 
+//Class used for logging the device token
 class DeviceIdHandler: RequestHandler {
     
     func handleRequest(request: WebRequest, response: WebResponse) {
